@@ -1,0 +1,70 @@
+<html><head><title>Description for phpSkypeStatus</title></head>
+<body>
+<h1>Description for phpSkypeStatus</h1>
+<p>This class offers This class offers you all features of the SkypeWeb. You can get the status text in different languages, the status code and all status images.</p>
+<p>for more information look at <a href="http://skype.com/share/buttons/status.html">http://skype.com/share/buttons/status.html</a>. The code is fully commented with phpDocumentor tags.</p>
+<p>An example and API description is provided.</p>
+
+<h2>functions</h2>
+<p><b>setSkypeID($id)</b><br/>
+- set the skypeid for a user to check
+</p>
+
+<p><b>string getXML()</b><br/>
+- returns the unprocessed xml/rdf data
+</p>
+
+<p><b>string getText($lang)</b><br/>
+- returns status text (in UTF-8 encoding) in specified language. defaults to english<br/>
+supported languages:
+<table>
+<tr><th>Language</th><th>lang-code</th></tr>
+<tr><td>English</td><td>en</td></tr>
+<tr><td>Deutsch</td><td>de</td></tr>
+<tr><td>Francais</td><td>fr</td></tr>
+<tr><td>italian</td><td>it</td></tr>
+<tr><td>polish</td><td>pl</td></tr>
+<tr><td>Japanese</td><td>ja</td></tr>
+<tr><td>Spanish</td><td>es</td></tr>
+<tr><td>Pt</td><td>pt</td></tr>
+<tr><td>Swedish</td><td>se</td></tr>
+<tr><td>Pt/br</td><td>pt-br</td></tr>
+<tr><td>zh, China, Zh/cn</td><td>zh-cn</td></tr>
+<tr><td>Honkong, Taiwan, Zh/tw</td><td>zh-tw</td></tr>
+</table>
+</p>
+<p><b>int getNum()</b><br/>
+- get the status id<br/>
+following status codes may be returned
+<table>
+<tr><th>ID</th><th>Status</th><th>this means</th></tr>
+<tr><td>0</td><td>UNKNOWN</td><td>Not opted in or no data available.</td></tr>
+<tr><td>1</td><td>OFFLINE</td><td>The user is Offline</td></tr>
+<tr><td>2</td><td>ONLINE</td><td>The user is Online</td></tr>
+<tr><td>3</td><td>AWAY</td><td>The user is Away</td></tr>
+<tr><td>4</td><td>NOT AVAILABLE</td><td>The user is Not Available</td></tr>
+<tr><td>5</td><td>DO NOT DISTURB</td><td>The user is Do Not Disturb (DND)</td></tr>
+<tr><td>6</td><td>INVISIBLE</td><td>The user is Invisible or appears Offline</td></tr>
+<tr><td>7</td><td>SKYPE ME</td><td>The user is in Skype Me mode</td></tr>
+</table>
+</p>
+<p><b>ressource getImageRessource($type)</b><br/>
+- returns a php image ressource defined by type (defaults to smallicon)<br/>
+- see getImagePNG($type)<br/>
+- TODO at this moment, only supports english language images
+<table>
+<tr><th>type</th><th>image style</th></tr>
+<tr><td>balloon</td><td>Balloon style</td></tr>
+<tr><td>bigclassic</td><td>Big Classic Style</td></tr>
+<tr><td>smallclassic</td><td>Small Classic Style</td></tr>
+<tr><td>smallicon</td><td>Small Icon (transparent background)</td></tr>
+<tr><td>mediumicon</td><td>Medium Icon</td></tr>
+<tr><td>dropdown-white</td><td>Dropdown White Background</td></tr>
+<tr><td>dropdown-trans</td><td>Dropdown Transparent Background</td></tr>
+</table>
+</p>
+<p><b>void getImagePNG($type)</b><br/>
+- outputs the statusimage as png to browser (defaults to smallicon)<br/>
+- see getImageRessource($type) for options
+</p>
+</body></html>
